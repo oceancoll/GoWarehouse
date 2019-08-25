@@ -1,0 +1,26 @@
+version: '3.1'
+services:
+  mysql:
+    image: mysql:5.7
+    container_name: mysql
+    ports:
+      - 3306:3306
+    environment:
+      TZ: Asia/Shanghai
+      MYSQL_ROOT_PASSWORD: rootadmin
+  redis:
+    image: redis:latest
+    ports:
+      - 6379:6379
+    command: --appendonly yes --requirepass "rootadmin"
+  mongodb:
+    image: mongo:3.4
+    ports:
+      - 27017:27017
+    environment:
+      - MONGODB_USERNAME=root
+      - MONGODB_PASSWORD=rootadmin
+      - MONGODB_DATABASE=admin
+    volumes:
+      - /mysoft/mongodb/configdb:/data/configdb/
+      - /mysoft/mongodb/db/:/data/db/
