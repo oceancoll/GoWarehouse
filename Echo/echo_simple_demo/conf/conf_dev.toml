@@ -1,0 +1,21 @@
+runmodel="dev"
+
+apiVersion = "v1"
+port = "8080"
+
+[log]
+logPath = "/Users/liujiacheng/go/src/echodemo"
+logFileName = "application.log"
+printConsole = true
+maxNumber = 10
+maxSize = 2
+# 1:debug
+level = 1
+
+[database]
+db_host = "106.12.200.182"
+db_port = 3306
+db_user = "root"
+db_pass = "rootadmin"
+db_name = "echodemo"
+db_type = "mysql"
