@@ -1,0 +1,14 @@
+{{ define "email.from" }}286847900@qq.com{{ end }}    //填写自己的qq邮箱
+{{ define "email.to" }}3786393@qq.com{{ end }}      //填写自己的qq邮箱
+{{ define "email.to.html" }}
+{{ range .Alerts }}
+=========start==========<br>
+告警程序: prometheus_alert<br>
+告警级别: {{ .Labels.severity }} 级<br>
+告警类型: {{ .Labels.alertname }}<br>
+故障主机: {{ .Labels.instance }}<br>
+告警主题: {{ .Annotations.summary }}<br>
+触发时间: {{ .StartsAt.Format "2006-01-02 15:04:05" }} <br>
+=========end==========<br>
+{{ end }}
+{{ end }}
